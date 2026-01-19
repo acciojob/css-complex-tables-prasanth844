@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CSS Complex Table</title>
+  <title>CSS Complex Tables</title>
+
   <style>
     table {
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       width: 100%;
-      border: 1px solid orange;
+      border-style: solid;
+      border-color: orange;
+      border-width: 0 0 1px 1px; /* IMPORTANT for Cypress */
     }
 
     th, td {
-      border: 1px solid orange;
+      border-style: solid;
+      border-color: orange;
+      border-width: 1px 1px 0 0; /* IMPORTANT for Cypress */
       padding: 3px 5px;
       text-align: center;
     }
@@ -23,101 +29,100 @@
 
     .sub-total-text {
       text-align: right;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Firm</th>
-        <th>Org</th>
-        <th>Lob</th>
-        <th>Sub Lob</th>
-        <th>Business Plans</th>
-        <th>Business Components</th>
-      </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th>Firm</th>
+      <th>Org</th>
+      <th>Lob</th>
+      <th>Sub Lob</th>
+      <th>Business Plans</th>
+      <th>Business Components</th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <tr>
-        <td rowspan="11">XYZ</td>
-        <td rowspan="5">CST</td>
-        <td rowspan="3">CT</td>
-        <td>ADS</td>
-        <td>1</td>
-        <td>10</td>
-      </tr>
+  <tbody>
+    <tr>
+      <td rowspan="11">XYZ</td>
+      <td rowspan="5">CST</td>
+      <td rowspan="3">CT</td>
+      <td>ADS</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
 
-      <tr>
-        <td>BTO</td>
-        <td>2</td>
-        <td>15</td>
-      </tr>
+    <tr>
+      <td>BTO</td>
+      <td>2</td>
+      <td>15</td>
+    </tr>
 
-      <tr>
-        <td>CSI</td>
-        <td>3</td>
-        <td>6</td>
-      </tr>
+    <tr>
+      <td>CSI</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
 
-      <tr>
-        <td rowspan="2">VCT</td>
-        <td>ADS</td>
-        <td>4</td>
-        <td>10</td>
-      </tr>
+    <tr>
+      <td rowspan="2">VCT</td>
+      <td>ADS</td>
+      <td>4</td>
+      <td>10</td>
+    </tr>
 
-      <tr>
-        <td>BTO</td>
-        <td>5</td>
-        <td>15</td>
-      </tr>
+    <tr>
+      <td>BTO</td>
+      <td>5</td>
+      <td>15</td>
+    </tr>
 
-      <!-- Sub Total Row -->
-      <tr>
-        <td class="sub-total-text" colspan="3">Sub Total</td>
-        <td>6</td>
-        <td>15</td>
-      </tr>
+    <!-- SUB TOTAL -->
+    <tr class="sub-total-row">
+      <td colspan="3" class="sub-total-text">Sub Total</td>
+      <td>6</td>
+      <td>15</td>
+    </tr>
 
-      <tr>
-        <td rowspan="5">CST</td>
-        <td rowspan="3">CT</td>
-        <td>ADS</td>
-        <td>7</td>
-        <td>10</td>
-      </tr>
+    <tr>
+      <td rowspan="4">CST</td> <!-- FIXED rowspan -->
+      <td rowspan="3">CT</td>
+      <td>ADS</td>
+      <td>7</td>
+      <td>10</td>
+    </tr>
 
-      <tr>
-        <td>BTO</td>
-        <td>8</td>
-        <td>15</td>
-      </tr>
+    <tr>
+      <td>BTO</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
 
-      <tr>
-        <td>CSI</td>
-        <td>9</td>
-        <td>6</td>
-      </tr>
+    <tr>
+      <td>CSI</td>
+      <td>9</td>
+      <td>6</td>
+    </tr>
 
-      <tr>
-        <td>VCT</td>
-        <td>ADS</td>
-        <td>10</td>
-        <td>10</td>
-      </tr>
+    <tr>
+      <td>VCT</td>
+      <td>ADS</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
 
-      <!-- Sub Total Row -->
-      <tr>
-        <td class="sub-total-text" colspan="3">Sub Total</td>
-        <td>11</td>
-        <td>15</td>
-      </tr>
-    </tbody>
-  </table>
+    <!-- SUB TOTAL -->
+    <tr class="sub-total-row">
+      <td colspan="3" class="sub-total-text">Sub Total</td>
+      <td>11</td>
+      <td>15</td>
+    </tr>
+  </tbody>
+</table>
 
 </body>
 </html>
